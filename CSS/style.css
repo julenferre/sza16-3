@@ -1,0 +1,43 @@
+body{
+	background-color: #DEDEFF;
+	font-family: Verdana;
+	padding: 1%;
+	margin: 1%;
+}
+
+div{
+	background-color: white;
+}
+
+#burua{
+	position: fixed;
+	top: 2%;
+	width: 96%;
+	height: 14%;
+}
+#burua > span{
+	text-align: right;
+}
+
+#estekak{
+	position: fixed;
+	width: 12%;
+}
+
+#edukia{
+	position: absolute;
+	left: 16%;
+	width: 82%;
+}
+
+#estekak, #edukia{
+	top: 18%;
+	height: 62%;
+}
+
+#oina{
+	position: fixed;
+	bottom: 2%;
+	width: 96%;
+	text-align: center;
+}
