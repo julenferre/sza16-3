@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head> 
+		<title>Lab3.2-Iruzkinak ikusi</title> 
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<style>
+			body{background-color:#FABADA;}
+			h1,a{font-weight:bold;}
+			table,th,td{border: 3px solid white;}
+			td,th{padding: 15px; text-align:center;}
+			th{
+				font:Verdana;
+				color:#ffff00;
+				background-color:#000000;
+			}
+			td{background-color:#d3d3d3;}
+			#imgL,#imgR{
+				position: absolute;
+				top: 10%;
+			}
+			#imgL{
+				left: 10%;
+			}
+			#imgR{
+				right: 10%;
+			}
+		</style>
+		<script>
+			var i = 0;
+			var irudiak = ["guitar.png","bass.png","drums.png","hand-rock.png"];
+			window.setInterval(function (){				
+				document.getElementById("irudia1").src="../img/"+irudiak[i];
+				document.getElementById("irudia2").src="../img/"+irudiak[i];
+				i = i + 1;
+				if(i > 3){
+					i = 0;
+				}
+			}, 500);
+		</script>
+	</head> 
+	<body> 
+		<center>
+			<h1>WEB ORRIA</h1>
+			<table>
+				<tr>
+					<th>IZENA</th>
+					<th>EMAILA</th>
+					<th>MEZUA</th>
+				</tr>
+				<tr>
+					<td>Donald Trump</td>
+					<td>fmexico@imtheone.usa</td>
+					<td>they will pay my wall ¬¬.</td>
+				</tr>
+				<tr>
+					<td>Julen</td>
+					<td>julenferre@gmail.com</td>
+					<td>...tó jakero.</td>
+				</tr>
+				<tr>
+					<td>Ekaitz</td>
+					<td>ekaneiza8@gmail.com</td>
+					<td>pipopipoooo.</td>
+				</tr>
+			</table>
+		<br />
+		<br />
+		<div id="imgL"><img id="irudia1" src="../img/hand-rock.png" /></div>
+		<div id="imgR"><img id="irudia2" src="../img/hand-rock.png" /></div>
+		<br />
+		<br />
+		<a href="iruzkinakSartu.html">-=HOME=-</a>
+		</center>
+		
+	</body> 
+</html>
