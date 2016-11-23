@@ -126,13 +126,13 @@
 	<body>
 		<h1>Erregistratu zaitez!</h1>
 		<div id="edukia">
-			<form id="form" action="">
+			<form id="form" action="GET" onSubmit="../PHP/bezeroaSartu.php">
 				<p>Izena: (*)<br/>
 				<input type="text" id="izena" onfocus="itzalGorriaKendu(izena)" onblur="checkIzena()"></input></p><br/>				
 				<p>Eposta: (*)<br/>
 				<input type="text" id="eposta" onblur="checkEposta()" onfocus="itzalGorriaKendu(eposta)"></input></p><br/>
 				<p id="postapubli"  style="display:none" >Eposta publiko bat sartu: 
-				<input type="checkbox" id="epostaCB" /></p><br/>
+				<input type="checkbox" id="epostaCB" value="bai" /></p><br/>
 				<p>Mezua: (*)<br/>
 				<textarea id="mezua" name="mezua" rows="6" cols="50" maxlength="300" style="overflow:auto;resize:none;" onblur="checkMezua()" onfocus="itzalGorriaKendu(mezua)"></textarea></p><br />
 				<br/>
