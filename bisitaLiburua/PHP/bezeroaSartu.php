@@ -1,4 +1,5 @@
 <?php
+
 	//GET-etik balioak hartu
 	$izena = $_GET['izena'];
 	$eposta = $_GET['eposta'];
@@ -10,7 +11,7 @@
 	$data = date('Y/m/d h:i:s', time());;
 	
 	//XML fitxategia ireki
-	$xml = simplexml_load_file("../XML/bezeroak.dtd");
+	$xml = simplexml_load_file('gordetegia.xml');
 	
 	//ID-a kalkulatu
 	$bezeroa = new SimpleXMLElement($xml);		

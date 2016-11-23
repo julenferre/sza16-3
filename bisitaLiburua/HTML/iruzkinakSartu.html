@@ -126,7 +126,7 @@
 	<body>
 		<h1>Erregistratu zaitez!</h1>
 		<div id="edukia">
-			<form id="form" action="GET" onSubmit="../PHP/bezeroaSartu.php">
+			<form id="form" method="GET" onSubmit="checkAll()" action="../PHP/bezeroaSartu.php">
 				<p>Izena: (*)<br/>
 				<input type="text" id="izena" onfocus="itzalGorriaKendu(izena)" onblur="checkIzena()"></input></p><br/>				
 				<p>Eposta: (*)<br/>
@@ -136,7 +136,7 @@
 				<p>Mezua: (*)<br/>
 				<textarea id="mezua" name="mezua" rows="6" cols="50" maxlength="300" style="overflow:auto;resize:none;" onblur="checkMezua()" onfocus="itzalGorriaKendu(mezua)"></textarea></p><br />
 				<br/>
-				<input type="button" id="bidaliBotoia" value="Datuak bidali" onclick="checkAll()">
+				<input type="submit" id="bidaliBotoia" value="Datuak bidali" />
 			</form>
 			<br>
 			<a href="iruzkinakIkusi.html">Mezuak ikusi</a>
