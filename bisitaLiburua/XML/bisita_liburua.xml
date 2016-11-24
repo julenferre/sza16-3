@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bisitak SYSTEM "bisita_liburua.dtd">
+<bisitak azkenid="b2">
+	<bisita id="b0">
+		<data>2016/08/16</data>
+		<izena>Julen</izena>
+		<iruzkina>Pipopi</iruzkina>
+		<eposta erakutsi="bai">julenferre@gmail.com</eposta>
+	</bisita>
+<bisita id="b1"><data>2016/11/24 12:01:48</data><izena>Perico</izena><iruzkina>to jakero</iruzkina><eposta erakutsi="bai">perico@palotes.com</eposta></bisita><bisita id="b2"><data>2016/11/24 12:12:36</data><izena>Nada</izena><iruzkina>Pez</iruzkina><eposta erakutsi="ez">nada@nada.pez</eposta></bisita></bisitak>
