@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+		<title>SalErosi</title>
+		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
+		<script src="../JS/balioztatu.js"></script>
+		<script>
+		function erabiltzaileaSartu(){
+			if(checkAll()){
+				var izena = document.getElementById("izena").value;
+				var abizenak = document.getElementById("abizenak").value;
+				var eposta = document.getElementById("eposta").value;
+				var pasahitza = document.getElementById("pasahitza").value;
+				var argazkia = document.getElementById("argazkia").value;
+				xhttp = new XMLHttpRequest();
+				var param; 
+				param += "izena="+izena+"&";
+				param += "abizenak="+abizenak+"&";
+				param += "eposta="+eposta+"&";
+				param += "pasahitza="+pasahitza+"&";
+				param += "argazkia="+argazkia";					
+				xhttp.onreadystatechange = function(){
+					if ((xhttp.readyState==4)&&(xhttp.status==200)){
+						document.getElementById("erabOndo").innerHTML = xhttp.responseText;
+					}
+				};
+				xhttp.open("POST","../PHP/egiaztatuPasahitzaBezeroa.php", true);
+				xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+				xhttp.send(param);
+			}
+		}
+		</script>
+  </head>
+  <body>
+		<div id='burua'>
+			<span class='esteka'><a href="signUp.html">Sign Up</a></span><br/>
+			<span class='esteka'><a href="signIn.html">Log In</a></span>
+			<h2>Sign Up</h2>
+		</div>
+		<div id='estekak'>
+			<span><a href='index.html'>Home</a></span>
+			<span><a href='../PHP/produktuak.php'>Produktuak</a></span>
+		</div>
+		<div id="edukia">
+			<form id="formularioa" method="POST" onsubmit="erabiltzaileaSartu()">
+			<p>Erabiltzaile Izena * : <input type="text" id="izena" name="izena" placeholder="Izena" /></p>
+			<p>Erabiltzaile Abizenak *: <input type="text" id="abizenak" name="abizenak" placeholder="Abizenak" /></p>
+			<p>Posta Elektronikoa *: <input type="text" id="eposta" name="eposta" placeholder="adibidea@mail.com" /></p>
+			<p>Pasahitza *: <input type="password" id="pass" name="pass" /></p>
+			<p>Irudia :<input type="file" id="argazkia" name="argazkia" onchange="irudiAurrekarga(this.files[0])">
+			<img id="argazkiAurrekarga" alt="Argazkia" style="display: none; height: 150px; width:auto" /><br/></p>
+			<input type="submit" value="OK" />
+		</form>
+		<div id="erabOndo" style=""></div>
+		</div>
+		<div id='oina'>
+			<p>&copy;Ekaitz Eizaguirre, &copy;Julen Ferrero - 2016</p>
+			<p><a href='https://github.com/julenferre/sza16-3' target="_blank">GitHub-era esteka</a></p>
+		</div>
+	</body>
+</html>
