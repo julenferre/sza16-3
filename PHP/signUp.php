@@ -5,6 +5,7 @@
 	$abizenak = $_POST['abizenak'];
 	$eposta = $_POST['eposta'];
 	$pasahitza = $_POST['pasahitza'];
+	$argazkia = 'selfiee';
 	if(!empty($_FILES['argazkia']['tmp_name'])){
 		$argazkia = addslashes(file_get_contents($_FILES['argazkia']['tmp_name']));
 	}

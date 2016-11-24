@@ -28,6 +28,7 @@ div{
 	position: absolute;
 	left: 16%;
 	width: 82%;
+	overflow:auto;
 }
 
 #estekak, #edukia{
