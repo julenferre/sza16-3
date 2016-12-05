@@ -25,3 +25,17 @@ function checkAll(){
 		return true;
 	}
 }
+function salneurriCheck(){
+	if(sn == "NaN"){
+		alert("Zenbaki bat sartu, mesedez");
+		return false;
+	}
+	else{
+		var sn = parseInt(document.getElementById("salneurria").value);
+		if(sn <= 0){
+			alert("Zenbaki positibo bat sartu, mesedez");
+			return false;
+		}
+		else return true;
+	}
+}

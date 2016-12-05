@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>LOG IN</title>
 		<script>
 			function checkLogin(){
 				var user = document.getElementById("user").value;
@@ -11,14 +12,13 @@
 				
 				xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
-					if ((xhttp.readyState==4)&&(xhttp.status==200 )){ 
-					document.getElementById("loginAnswer").innerHTML = xhttp.responseText;
-						/*if(xhttp.responseText == "okerra"){
+					if ((xhttp.readyState==4)&&(xhttp.status==200 )){
+						if(xhttp.responseText == "okerra"){
 							document.getElementById("loginAnswer").innerHTML = "<font color='red'>Erabiltzaile edota pasahitza okerrak</font>";
 						}
 						else {
-							document.getElementById("loginAnswer").innerHTML = "Erabiltzaile eta pasahitza zuzenak";
-						}*/
+							window.location.href = "../PHP/userMain.php?user=" + encodeURIComponent(user);
+						}
 					}
 				};
 				xhttp.open("POST","../PHP/logIn.php", true);
@@ -39,7 +39,7 @@
 			<input type="button" id="submit" value="Sartu" onclick="checkLogin()" />
 		</form>
 		<br/><br/>
-		<p> <a href='../layout.html'> -=HOME=-</a> </p>
+		<p> <a href='../HTML/index.html'> -=HOME=-</a> </p>
 		<br><br><div id="loginAnswer"></div>
 	</body>
 </html>

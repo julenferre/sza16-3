@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+		<title>Produktua Igo</title>
+		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
+		<script src="../JS/balioztatu.js"></script>
+		<script>
+		function irudiAurrekarga(irudia){
+			document.getElementById('argazkiAurrekarga').style.display = 'inline';
+			document.getElementById('argazkiAurrekarga').src = window.URL.createObjectURL(irudia);
+		}
+		</script>
+  </head>
+  <body>
+		<div id='burua'>
+			<span class='esteka'><a href="signUp.html">Sign Up</a></span><br/>
+			<span class='esteka'><a href="logIn.html">Log In</a></span>
+			<h2>Sign Up</h2>
+		</div>
+		<div id='estekak'>
+			<span><a href='index.html'>Home</a></span>
+			<span><a href='../PHP/produktuak.php'>Produktuak</a></span>
+		</div>
+		<div id="edukia">
+				<form id="formularioa" method="POST" onsubmit="return salneurriCheck()" action="../PHP/signUp.php" enctype="multipart/form-data">
+				<p>Produktua * : <input type="text" id="izena" name="izena" placeholder="Produktua" required /></p>
+				<p>Deskribapena: <textarea id="deskribapena" name="deskribapena" style="resize: none; width: 320px; height: 40px"></textarea><br /></p>
+				<p>Salneurria *: <input type="text" id="salneurria" name="salneurria" onblur="salnuerriCheck()" />€</p>
+				<p>Argazkia :<input type="file" id="argazkia" name="argazkia" onchange="irudiAurrekarga(this.files[0])">
+				<img id="argazkiAurrekarga" alt="Argazkia" style="display: none; height: 150px; width:auto" /><br/></p>
+				<input type="submit" value="OK" />
+			</form>
+			<div id="erabOndo" style=""></div>
+		</div>
+		<div id='oina'>
+			<p>&copy;Ekaitz Eizaguirre, &copy;Julen Ferrero - 2016</p>
+			<p><a href='https://github.com/julenferre/sza16-3' target="_blank">GitHub-era esteka</a></p>
+		</div>
+	</body>
+</html>

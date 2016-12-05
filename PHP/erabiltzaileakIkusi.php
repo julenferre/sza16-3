@@ -1,11 +1,11 @@
 <html>
 	<head>
-	<style>
-		table, td {
-			border: 1px solid black;
-			padding : 2px;
-		}
-	</style>
+		<style>
+			table, td {
+				border: 1px solid black;
+				padding : 2px;
+			}
+		</style>
 	</head>
 	<body>
 		<table>
