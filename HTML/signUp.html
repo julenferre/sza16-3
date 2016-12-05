@@ -6,45 +6,16 @@
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 		<script src="../JS/balioztatu.js"></script>
 		<script>
-		var photo;
 		function irudiAurrekarga(irudia){
 			document.getElementById('argazkiAurrekarga').style.display = 'inline';
-			photo = window.URL.createObjectURL(irudia);
 			document.getElementById('argazkiAurrekarga').src = window.URL.createObjectURL(irudia);
-		}
-		function erabiltzaileaSartu(){
-			if(checkAll()){
-				var izena = document.getElementById("izena").value;
-				var abizenak = document.getElementById("abizenak").value;
-				var eposta = document.getElementById("eposta").value;
-				var pasahitza = document.getElementById("pasahitza").value;
-				var argazkia = photo;
-				xhttp = new XMLHttpRequest();
-				var param; 
-				param += "izena="+izena+"&";
-				param += "abizenak="+abizenak+"&";
-				param += "eposta="+eposta+"&";
-				param += "pasahitza="+pasahitza+"&";
-				param += "argazkia="+argazkia;					
-				xhttp.onreadystatechange = function(){
-					if ((xhttp.readyState==4)&&(xhttp.status==200)){
-						document.getElementById("erabOndo").innerHTML = xhttp.responseText;
-					}
-				};
-				xhttp.open("POST","../PHP/signUp.php", true);
-				xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-				xhttp.send(param);
-			}
-			else{
-				alert("Algo va mal...");
-			}
 		}
 		</script>
   </head>
   <body>
 		<div id='burua'>
 			<span class='esteka'><a href="signUp.html">Sign Up</a></span><br/>
-			<span class='esteka'><a href="signIn.html">Log In</a></span>
+			<span class='esteka'><a href="logIn.html">Log In</a></span>
 			<h2>Sign Up</h2>
 		</div>
 		<div id='estekak'>
@@ -52,15 +23,15 @@
 			<span><a href='../PHP/produktuak.php'>Produktuak</a></span>
 		</div>
 		<div id="edukia">
-			<form id="formularioa" method="POST">
-			<p>Erabiltzaile Izena * : <input type="text" id="izena" name="izena" placeholder="Izena" /></p>
-			<p>Erabiltzaile Abizenak *: <input type="text" id="abizenak" name="abizenak" placeholder="Abizenak" /></p>
-			<p>Posta Elektronikoa *: <input type="text" id="eposta" name="eposta" placeholder="adibidea@mail.com" onblur="epostaCheck()" /></p>
-			<p>Pasahitza *: <input type="password" id="pasahitza" name="pasahitza" onblur="pasahitzaCheck()"  /></p>
-			<p>Irudia :<input type="file" id="argazkia" name="argazkia" onchange="irudiAurrekarga(this.files[0])">
-			<img id="argazkiAurrekarga" alt="Argazkia" style="display: none; height: 150px; width:auto" /><br/></p>
-			<input type="button" value="OK" onclick="erabiltzaileaSartu()" />
-		</form>
+				<form id="formularioa" method="POST" onsubmit="return checkAll()" action="../PHP/signUp.php" enctype="multipart/form-data">
+				<p>Erabiltzaile Izena * : <input type="text" id="izena" name="izena" placeholder="Izena" /></p>
+				<p>Erabiltzaile Abizenak *: <input type="text" id="abizenak" name="abizenak" placeholder="Abizenak" /></p>
+				<p>Posta Elektronikoa *: <input type="text" id="eposta" name="eposta" placeholder="adibidea@mail.com" onblur="epostaCheck()" /></p>
+				<p>Pasahitza *: <input type="password" id="pasahitza" name="pasahitza" onblur="pasahitzaCheck()"  /></p>
+				<p>Argazkia :<input type="file" id="argazkia" name="argazkia" onchange="irudiAurrekarga(this.files[0])">
+				<img id="argazkiAurrekarga" alt="Argazkia" style="display: none; height: 150px; width:auto" /><br/></p>
+				<input type="submit" value="OK" />
+			</form>
 		<div id="erabOndo" style=""></div>
 		</div>
 		<div id='oina'>

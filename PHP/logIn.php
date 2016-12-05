@@ -1,43 +1,26 @@
-<!DOCTYPE html>
-<html>
-	<head>
-	</head>
-	<body>
-		<p><b>AUTENTIFIKATU ZAITEZ:</b></p>
-		<form id="login" name="login" onSubmit='logIn.php' method="POST">
-				<br />
-				<b>Erabiltzailea: </b>
-				<input type="text" id="user" name="user" />
-				<br />
-				<b>Pasahitza :</b>
-				<input type="password" id="pass" name="pass" />
-				<br />
-				<input type="submit" id="submit" value="Sartu" />
-		</form>
-		<br/><br/>
-		<p> <a href='../layout.html'> -=HOME=-</a> </p>
-	</body>
-</html>
-
-
-<?php
-		session_start();
-		if(isset($_POST['user'],$_POST['pass']) && strlen($_POST['user'])!=0 && strlen($_POST['pass'])!=0){
-			echo"<p><font size='40'>TO JAKEROOOO !</font></p>";
-			$aux1=false;
-			$xml=simplexml_load_file('../XML/erabiltzaileak.xml');
-			foreach ($xml->xpath('//erabiltzailea') as $erab)
-			{
-				if($erab->eposta==$_POST['user'] && $erab->pasahitza==$_POST['pass']){
-					$aux1=true;
-				}
-			}
-			if($aux1){
-				$_SESSION['user']=$_POST['user'];
-				header("Location:../HTML/home.html")
-			}
-			else{
-				echo"<p><font size='40'>ESTA TODO MAL !</font></p>";
+<?PHP
+	//DDBBra konektatu		
+	include "connect.php";
+	
+	$user = $_POST['user'];
+	$pass = $_POST['pass'];
+	$encpas = sha1($pass);
+	
+	$correctUser = FALSE;
+	
+	$users = simplexml_load_file('../XML/erabiltzaileak.xml');
+	foreach ($users->xpath('//erabiltzailea') as $erabiltzailea)
+	{
+		if(!$correctUser){
+			if($erabiltzailea->izena == $user && $erabiltzailea->pasahitza == $encpas){
+				$correctUser = TRUE;
+				echo ("zuzena");
 			}
 		}
+	}
+
+	if(!$correctUser){
+		echo ("okerra");
+	}	
+	
 ?>
