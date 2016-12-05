@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<?PHPsession_start();$_SESSION['user']=$_GET['user']?>
 		<title>MAIN</title>
 		<script>
 			function produktuBerriaIgo(){
-				window.location.href = "../PHP/produktuaIgo.php?user=" + encodeURIComponent(<?PHP$_GET['user']?>);
+				window.location.href = "../HTML/produktuaIgo.html?user=" + encodeURIComponent(<?PHP$_GET['user']?>);
 			}
 		</script>
 	</head>
@@ -25,8 +26,10 @@
 				}
 				
 				echo ("<br><input type='button' value='Produktua igo' onclick='produktuBerriaIgo()'");
+				echo ("<br>");
+				
+				include "produktuakIkusi.php?user=".$_GET['user'];
 			?>
-			
 		</div>		
 	</body>
 </html>

@@ -3,24 +3,21 @@
 	include "connect.php";
 	
 	$izena = $_POST['izena'];
-	$abizenak = $_POST['abizenak'];
-	$eposta = $_POST['eposta'];
-	$pasahitza = $_POST['pasahitza'];
+	$jabea = $_SESSION['user'];
+	$deskribapena = $_POST['deskribapena'];
+	$salneurria = $_POST['salneurria'];
 	if(!empty($_FILES['argazkia']['tmp_name'])){
 		$argazkia = addslashes(file_get_contents($_FILES['argazkia']['tmp_name']));
 	}
 	else {
-		$argazkia = addslashes(file_get_contents("../IMG/UserIcon.png"));
+		$argazkia = addslashes(file_get_contents("../IMG/default.jpg"));
 	}
 	
 	//argazkiaren id-a kalkulatu
-	$id = strval(time());
-	
-	//Pasahitza enkriptatu
-	$pass_sha = sha1($pasahitza);
+	$argazki_id = strval(time());
 	
 	//Erabiltzailearen datuak XML-an gorde
-	$xml = simplexml_load_file("../XML/erabiltzaileak.xml");
+	$xml = simplexml_load_file("../XML/produktuak.xml");
 	
 	$ID=$xml['azkenid'];
 	$ID = substr($ID, 1, strlen($ID));
@@ -28,15 +25,15 @@
 	
 	$xml['azkenid']=$ID;
 	
-	$semea = $xml->addChild('erabiltzailea');
+	$semea = $xml->addChild('produktua');
 	$semea->addAttribute('id',$ID);
 	$semea->addChild('izena',$izena);
-	$semea->addChild('abizenak',$abizenak);
-	$semea->addChild('eposta',$eposta);
-	$semea->addChild('pasahitza',$pass_sha);
-	$semea->addChild('argazkia',$id);
+	$semea->addChild('jabea',$jabea);
+	$semea->addChild('deskribapena',$deskribapena);
+	$semea->addChild('salneurria',$salneurria);
+	$semea->addChild('argazkia',$argazki_id);
 	
-	if($xml->asXML("../XML/erabiltzaileak.xml") === FALSE) {
+	if($xml->asXML("../XML/produktuak.xml") === FALSE) {
 		echo "<font color='red'>Mezua ez da XML-an gorde: </font>". $xml . "</h2><br>";
 	}
 	else{	
@@ -44,10 +41,10 @@
 	}
 	
 	//Argazkia DBan gorde
-	$query = "INSERT INTO userpic VALUES ('$id','$argazkia');";
+	$query = "INSERT INTO productimg VALUES ('$argazki_id','$argazkia');";
 
 	if($conn->query($query) === TRUE) {
-		echo "<font color='green'>Datuak ondo sartu dira (MySQL)</font><br><a href='erabiltzaileakIkusi.php'>Erabiltzaileak ikusi</a><br><a href='../HTML/index.html'> Orrialde nagusira bueltatu </a>";
+		echo "<font color='green'>Datuak ondo sartu dira (MySQL)</font><br><a href='../HTML/index.html'> Orrialde nagusira bueltatu </a>";
 	}
 	else{
 		echo "<font color='red'>Datuak ez dira sartu: " . $query . "</font><br>" . $conn->error;

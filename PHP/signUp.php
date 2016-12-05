@@ -15,7 +15,7 @@
 	}
 	
 	//argazkiaren id-a kalkulatu
-	$id = strval(time());
+	$argazki_id = strval(time());
 	
 	//Pasahitza enkriptatu
 	$pass_sha = sha1($pasahitza);
@@ -35,7 +35,7 @@
 	$semea->addChild('abizenak',$abizenak);
 	$semea->addChild('eposta',$eposta);
 	$semea->addChild('pasahitza',$pass_sha);
-	$semea->addChild('argazkia',$id);
+	$semea->addChild('argazkia',$argazki_id);
 	
 	if($xml->asXML("../XML/erabiltzaileak.xml") === FALSE) {
 		echo "<font color='red'>Mezua ez da XML-an gorde: </font>". $xml . "</h2><br>";
@@ -45,7 +45,7 @@
 	}
 	
 	//Argazkia DBan gorde
-	$query = "INSERT INTO userpic VALUES ('$id','$argazkia');";
+	$query = "INSERT INTO userpic VALUES ('$argazki_id','$argazkia');";
 
 	if($conn->query($query) === TRUE) {
 		echo "<font color='green'>Datuak ondo sartu dira (MySQL)</font><br><a href='erabiltzaileakIkusi.php'>Erabiltzaileak ikusi</a><br><a href='../HTML/index.html'> Orrialde nagusira bueltatu </a>";
