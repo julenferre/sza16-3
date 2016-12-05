@@ -9,7 +9,7 @@
 	foreach ($users->xpath('//erabiltzailea') as $erabiltzailea)
 	{
 		if(!$correctUser){
-			if(strcmp($erabiltzailea->izena,$user) === 0 && strcmp($erabiltzailea->pasahitza,$encpas) === 0){
+			if(strcmp($erabiltzailea->eposta,$user) === 0 && strcmp($erabiltzailea->pasahitza,$encpas) === 0){
 				$correctUser = TRUE;
 				echo ("zuzena");
 			}

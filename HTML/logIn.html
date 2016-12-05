@@ -12,12 +12,13 @@
 				xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
 					if ((xhttp.readyState==4)&&(xhttp.status==200 )){ 
-						if(xhttp.responseText == "okerra"){
+					document.getElementById("loginAnswer").innerHTML = xhttp.responseText;
+						/*if(xhttp.responseText == "okerra"){
 							document.getElementById("loginAnswer").innerHTML = "<font color='red'>Erabiltzaile edota pasahitza okerrak</font>";
 						}
 						else {
 							document.getElementById("loginAnswer").innerHTML = "Erabiltzaile eta pasahitza zuzenak";
-						}
+						}*/
 					}
 				};
 				xhttp.open("POST","../PHP/logIn.php", true);
@@ -29,7 +30,7 @@
 	<body>
 		<p><b>AUTENTIFIKATU ZAITEZ:</b></p>
 		<form id="login" name="login" action="" method="POST">				
-			<b>Erabiltzailea: </b>
+			<b>Eposta: </b>
 			<input type="text" id="user" name="user" />
 			<br />
 			<b>Pasahitza :</b>
