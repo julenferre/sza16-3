@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>MAIN</title>
+		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 		<script>
 			function produktuBerriaIgo(erab){
 				window.location.href = "../HTML/produktuaIgo.html?user=" + encodeURIComponent(erab);
