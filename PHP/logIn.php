@@ -11,6 +11,10 @@
 		if(!$correctUser){
 			if(strcmp($erabiltzailea->eposta,$user) === 0 && strcmp($erabiltzailea->pasahitza,$encpas) === 0){
 				$correctUser = TRUE;
+				if (session_status() == PHP_SESSION_NONE) {
+					session_start();
+				}
+				$_SESSION['user'] = $user;
 				echo ("zuzena");
 			}
 		}

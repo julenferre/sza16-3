@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?PHPsession_start();$_SESSION['user']=$_GET['user']?>
 		<title>MAIN</title>
 		<script>
-			function produktuBerriaIgo(){
-				window.location.href = "../HTML/produktuaIgo.html?user=" + encodeURIComponent(<?PHP$_GET['user']?>);
+			function produktuBerriaIgo(erab){
+				window.location.href = "../HTML/produktuaIgo.html?user=" + encodeURIComponent(erab);
+			}
+			
+			function produktuakIkusi(){
+				xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function(){
+					if ((xhttp.readyState==4)&&(xhttp.status==200 )){
+						document.getElementById("produktuak").innerHTML = xhttp.responseText;
+					}
+				};
+				xhttp.open("GET","../PHP/produktuakIkusi.php?denak=ez", true);
+				xhttp.send();
 			}
 		</script>
 	</head>
@@ -25,11 +35,11 @@
 					}
 				}
 				
-				echo ("<br><input type='button' value='Produktua igo' onclick='produktuBerriaIgo()'");
+				echo ("<br><input type='button' value='Produktua igo' onclick='produktuBerriaIgo(".$_GET[user].")'");
 				echo ("<br>");
-				
-				include "produktuakIkusi.php?user=".$_GET['user'];
 			?>
+			<br>
+			<div id="produktuak"></div>
 		</div>		
 	</body>
 </html>
