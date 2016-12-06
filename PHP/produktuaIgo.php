@@ -44,7 +44,7 @@
 	$query = "INSERT INTO productimg VALUES ('$argazki_id','$argazkia');";
 
 	if($conn->query($query) === TRUE) {
-		echo "<font color='green'>Datuak ondo sartu dira (MySQL)</font><br><a href='../HTML/index.html'> Orrialde nagusira bueltatu </a>";
+		echo "<font color='green'>Datuak ondo sartu dira (MySQL)</font><br><a href='../PHP/userMain.php'> Atzera bueltatu </a>";
 	}
 	else{
 		echo "<font color='red'>Datuak ez dira sartu: " . $query . "</font><br>" . $conn->error;

@@ -28,18 +28,33 @@
 		</script>
 	</head>
 	<body>
-		<p><b>AUTENTIFIKATU ZAITEZ:</b></p>
-		<form id="login" name="login" action="" method="POST">				
-			<b>Eposta: </b>
-			<input type="text" id="user" name="user" />
-			<br />
-			<b>Pasahitza :</b>
-			<input type="password" id="pass" name="pass" />
-			<br />
-			<input type="button" id="submit" value="Sartu" onclick="checkLogin()" />
-		</form>
-		<br/><br/>
-		<p> <a href='../HTML/index.html'> -=HOME=-</a> </p>
-		<br><br><div id="loginAnswer"></div>
+		<div id='burua'>
+			<span class='esteka'><a href="signUp.html">Sign Up</a></span><br/>
+			<span class='esteka'><a href="logIn.html">Log In</a></span>
+			<h2>SalErosi</h2>
+		</div>
+		<div id='estekak'>
+			<span><a href='../HTML/index.html'>Home</a></span>
+			<span><a href='../PHP/produktuak.php'>Produktuak</a></span>
+		</div>
+		<div id="edukia">
+			<p><b>AUTENTIFIKATU ZAITEZ:</b></p>
+			<form id="login" name="login" action="" method="POST">				
+				<b>Eposta: </b>
+				<input type="text" id="user" name="user" placeholder="ikasle123@ikasle.ehu.eus" />
+				<br />
+				<b>Pasahitza :</b>
+				<input type="password" id="pass" name="pass" />
+				<br />
+				<input type="button" id="submit" value="Sartu" onclick="checkLogin()" />
+			</form>
+			<br/><br/>
+			<p> <a href='../HTML/index.html'> -=HOME=-</a> </p>
+			<br><br><div id="loginAnswer"></div>
+		</div>
+		<div id='oina'>
+			<p>&copy;Ekaitz Eizaguirre, &copy;Julen Ferrero - 2016</p>
+			<p><a href='https://github.com/julenferre/sza16-3' target="_blank">GitHub-era esteka</a></p>
+		</div>
 	</body>
 </html>

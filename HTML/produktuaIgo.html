@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-		<?PHPsession_start();$_SESSION['user']=$_GET['user']?>
 		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
 		<title>Produktua Igo</title>
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
@@ -20,11 +19,11 @@
 			<h2>Sign Up</h2>
 		</div>
 		<div id='estekak'>
-			<span><a href='index.html'>Home</a></span>
+			<span><a href='../HTML/index.html'>Home</a></span>
 			<span><a href='../PHP/produktuak.php'>Produktuak</a></span>
 		</div>
 		<div id="edukia">
-				<form id="formularioa" method="POST" onsubmit="return salneurriCheck()" action="../PHP/signUp.php" enctype="multipart/form-data">
+				<form id="formularioa" method="POST" onsubmit="return salneurriCheck()" action="../PHP/produktuaIgo.php" enctype="multipart/form-data">
 				<p>Produktua * : <input type="text" id="izena" name="izena" placeholder="Produktua" required /></p>
 				<p>Deskribapena: <textarea id="deskribapena" name="deskribapena" style="resize: none; width: 320px; height: 40px"></textarea><br /></p>
 				<p>Salneurria *: <input type="text" id="salneurria" name="salneurria" onblur="salnuerriCheck()" />€</p>

@@ -20,6 +20,15 @@
 		</script>
 	</head>
 	<body>
+		<div id='burua'>
+			<span class='esteka'><a href="signUp.html">Sign Up</a></span><br/>
+			<span class='esteka'><a href="logIn.html">Log In</a></span>
+			<h2>SalErosi</h2>
+		</div>
+		<div id='estekak'>
+			<span><a href='../HTML/index.html'>Home</a></span>
+			<span><a href='../PHP/produktuak.php'>Produktuak</a></span>
+		</div>
 		<div id="edukia">
 			<?PHP
 				//DDBBra konektatu		
@@ -28,7 +37,7 @@
 				$erabiltzaileak = simplexml_load_file('../XML/erabiltzaileak.xml');
 				foreach ($erabiltzaileak->xpath('//erabiltzailea') as $erabiltzailea)
 				{
-					if(strcmp($erabiltzailea->eposta,$_GET['user'])===0){
+					if(strcmp($erabiltzailea->eposta,$_SESSION['user'])===0){
 						$erantzuna = $conn->query("SELECT image FROM userpic WHERE id = '$erabiltzailea->argazkia'");
 						echo "<img src='data:image/jpeg;base64,".base64_encode( $erantzuna->fetch_assoc()['image'] )."' width='100px' /><br>";
 						echo ("$erabiltzailea->izena<br>$erabiltzailea->abizenak<br>$erabiltzailea->eposta<br>");			
@@ -41,5 +50,9 @@
 			<br>
 			<div id="produktuak"></div>
 		</div>		
+		<div id='oina'>
+			<p>&copy;Ekaitz Eizaguirre, &copy;Julen Ferrero - 2016</p>
+			<p><a href='https://github.com/julenferre/sza16-3' target="_blank">GitHub-era esteka</a></p>
+		</div>
 	</body>
 </html>
