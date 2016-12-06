@@ -7,7 +7,8 @@
 			function produktuBerriaIgo(erab){
 				window.location.href = "../HTML/produktuaIgo.html?user=" + encodeURIComponent(erab);
 			}
-			
+			var timer;		
+			timer = setInterval(produktuakIkusi, 5000);
 			function produktuakIkusi(){
 				xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function(){
@@ -15,7 +16,7 @@
 						document.getElementById("produktuak").innerHTML = xhttp.responseText;
 					}
 				};
-				xhttp.open("GET","../PHP/produktuakIkusi.php?denak=ez", true);
+				xhttp.open("GET","../PHP/produktuakIkusi.php", true);
 				xhttp.send();
 			}
 		</script>
@@ -49,7 +50,13 @@
 				echo ("<br>");
 			?>
 			<br>
-			<div id="produktuak"></div>
+			<div id="produktuak">
+				<?PHP 
+					session_start();
+					$_SESSION['prod'] = "erab";
+					include ("../PHP/produktuakIkusi.php");
+				?>
+			</div>
 		</div>		
 		<div id='oina'>
 			<p>&copy;Ekaitz Eizaguirre, &copy;Julen Ferrero - 2016</p>

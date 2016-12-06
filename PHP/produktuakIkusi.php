@@ -13,7 +13,7 @@
 				//DDBBra konektatu		
 				include "connect.php";
 				$produktuak = simplexml_load_file('../XML/produktuak.xml');
-				if(strcmp($_GET['denak'],"bai")===0){
+				if(strcmp($_SESSION['prod'],"denak")===0){
 					echo ("<tr><td><b>Izena</b></td><td><b>Jabea</b></td><td><b>Deskribapena</b></td><td><b>Salneurria</b></td><td><b>Argazkia</b></td></tr>");
 					foreach ($produktuak->xpath('//produktua') as $produktua)
 					{ 
@@ -28,7 +28,7 @@
 						echo ("</tr>");
 					}
 				}
-				else if(strcmp($_GET['denak'],"ez")===0){
+				else if(strcmp($_SESSION['prod'],"erab")===0){
 					echo ("<tr><td><b>Izena</b></td><td><b>Deskribapena</b></td><td><b>Salneurria</b></td><td><b>Argazkia</b></td></tr>");
 					foreach ($produktuak->xpath('//produktua') as $produktua)
 					{ 
