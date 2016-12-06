@@ -1,11 +1,6 @@
 <html>
 	<head>
-		<style>
-			table, td {
-				border: 1px solid black;
-				padding : 2px;
-			}
-		</style>
+		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 	</head>
 	<body>
 		<table>

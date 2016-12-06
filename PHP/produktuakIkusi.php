@@ -1,11 +1,6 @@
 <html>
 	<head>
-		<style>
-			table, td {
-				border: 1px solid black;
-				padding : 2px;
-			}
-		</style>
+		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 	</head>
 	<body>
 		<table>
@@ -34,7 +29,7 @@
 					{ 
 						if(strcmp($_SESSION['user'],$produktua->jabea)===0){
 							echo ("<tr>");
-							echo ("<td>$produktua->izena</td><td>$produktua->deskribapena</td><td>$produktua->salneurria</td>");			
+							echo ("<td>$produktua->izena</td><td>$produktua->deskribapena</td><td>$produktua->salneurria &euro;</td>");			
 							
 							$query = "SELECT image FROM productimg WHERE id = '$produktua->argazkia'";
 								
