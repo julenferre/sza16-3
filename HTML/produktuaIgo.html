@@ -4,8 +4,8 @@
 		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
 		<title>Produktua Igo</title>
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
-		<script src="../JS/balioztatu.js"></script>
-		<script>
+		<script type="text/javascript" src="../JS/balioztatu.js"></script>
+		<script type="text/javascript">
 		function irudiAurrekarga(irudia){
 			document.getElementById('argazkiAurrekarga').style.display = 'inline';
 			document.getElementById('argazkiAurrekarga').src = window.URL.createObjectURL(irudia);
@@ -19,7 +19,7 @@
 			<h2>Sign Up</h2>
 		</div>
 		<div id='estekak'>
-			<span><a href='../HTML/index.html'>Home</a></span>
+			<span><a href='../HTML/index.html'>Home</a></span><br/>
 			<span><a href='../PHP/produktuak.php'>Produktuak</a></span>
 		</div>
 		<div id="edukia">
@@ -28,7 +28,7 @@
 				<p>Deskribapena: <textarea id="deskribapena" name="deskribapena" style="resize: none; width: 320px; height: 40px"></textarea><br /></p>
 				<p>Salneurria *: <input type="text" id="salneurria" name="salneurria" onblur="salnuerriCheck()" />&euro;</p>
 				<p>Argazkia :<input type="file" id="argazkia" name="argazkia" onchange="irudiAurrekarga(this.files[0])">
-				<img id="argazkiAurrekarga" alt="Argazkia" style="display: none; height: 150px; width:auto" /><br/></p>
+				<img src="" id="argazkiAurrekarga" alt="Argazkia" style="display: none; height: 150px; width:auto" /><br/></p>
 				<input type="submit" value="OK" />
 			</form>
 			<div id="erabOndo" style=""></div>

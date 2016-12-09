@@ -1,49 +1,66 @@
-body{
+body {
 	background-color: #DEDEFF;
 	font-family: Verdana;
 	padding: 1%;
 	margin: 1%;
 }
 
-div{
+div {
 	background-color: white;
 }
 
-#burua{
+#burua {
 	position: fixed;
 	top: 2%;
 	width: 96%;
 	height: 14%;
-}
-#burua > span{
-	text-align: right;
+	text-align: center;
+	padding: 10px;
 }
 
-#estekak{
+#burua .esteka {
+	display: inline-block;
+	position: fixed;
+	right: 2%;
+}
+
+#burua h2 {
+	display: inline-block;
+	position: fixed;
+	top: 5%;
+	transform: translate(-50%, 0%);
+}
+
+#estekak {
 	position: fixed;
 	width: 12%;
+	text-align: center;
+	padding: 10px 10px 0px 0px;
 }
 
-#edukia{
+#edukia {
 	position: absolute;
 	left: 16%;
 	width: 82%;
 	overflow:auto;
+	padding: 10px 10px 0px 10px;
 }
 
-#estekak, #edukia{
-	top: 18%;
-	height: 62%;
+#estekak, #edukia {
+	top: 22%;
+	height: 58%;
 }
 
-#oina{
+#oina {
 	position: fixed;
 	bottom: 2%;
 	width: 96%;
 	text-align: center;
+	padding: 0px 10px 0px 10px;
 }
 
 table, td {
 	border: 1px solid black;
 	padding : 2px;
+	margin: 5px;
 }

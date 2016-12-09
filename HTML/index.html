@@ -4,7 +4,7 @@
 		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
 		<title>SalErosi</title>
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
-		<script>
+		<script type="text/javascript">
 			var timer;		
 			timer = setInterval(produktuakIkusi, 5000);
 						
@@ -15,9 +15,10 @@
 						document.getElementById("answer").innerHTML = xhttp.responseText;
 					}
 				};
-				xhttp.open("GET","../PHP/produktuakIkusi.php?denak=bai", true);
+				xhttp.open("GET","../PHP/produktuakIkusi.php?ikusi=denak", true);
 				xhttp.send();
 			}
+			produktuakIkusi();
 		</script>
   </head>
   <body>
@@ -27,13 +28,14 @@
 			<h2>SalErosi</h2>
 		</div>
 		<div id='estekak'>
-			<span><a href='../HTML/index.html'>Home</a></span>
+			<span><a href='../HTML/index.html'>Home</a></span><br/>
 			<span><a href='../PHP/produktuak.php'>Produktuak</a></span>
 		</div>
 		<div id="edukia">
-			<p>Produktuak eskuragarri!</p>
+			<p style="text-align: center">Produktuak eskuragarri!</p>
 			<br>
-			<div id="answer"></div>
+			<div id="answer">
+			</div>
 		</div>
 		<div id='oina'>
 			<p>&copy;Ekaitz Eizaguirre, &copy;Julen Ferrero - 2016</p>

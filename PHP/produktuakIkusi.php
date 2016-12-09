@@ -8,8 +8,12 @@
 				//DDBBra konektatu		
 				include "connect.php";
 				$produktuak = simplexml_load_file('../XML/produktuak.xml');
-				if(strcmp($_SESSION['prod'],"denak")===0){
-					echo ("<tr><td><b>Izena</b></td><td><b>Jabea</b></td><td><b>Deskribapena</b></td><td><b>Salneurria</b></td><td><b>Argazkia</b></td></tr>");
+				if(strcmp($_GET['ikusi'],"denak")===0){
+					echo ("<tr><td><b>Izena</b></td><td><b>Jabea</b></td><td><b>Deskribapena</b></td><td><b>Salneurria</b></td><td><b>Argazkia</b></td>");
+					if(isset($_GET['erosi'])){
+						echo("<td></td>");
+					}
+					echo ("</tr>");
 					foreach ($produktuak->xpath('//produktua') as $produktua)
 					{ 
 						echo ("<tr>");
@@ -19,11 +23,13 @@
 							
 						$erantzuna = $conn->query($query);
 						echo "<td><img src='data:image/jpeg;base64,".base64_encode( $erantzuna->fetch_assoc()['image'] )."' width='100px' /></td>";
-						
+						if(isset($_GET['erosi'])){
+							echo("<td><a onclick='produktuaErosi(\"".$produktua['id']."\",\"".$_SESSION['user']."\")' style='text-decoration:underline;color:blue;'>Erosi</a></td>");
+						}
 						echo ("</tr>");
 					}
 				}
-				else if(strcmp($_SESSION['prod'],"erab")===0){
+				else {					
 					echo ("<tr><td><b>Izena</b></td><td><b>Deskribapena</b></td><td><b>Salneurria</b></td><td><b>Argazkia</b></td></tr>");
 					foreach ($produktuak->xpath('//produktua') as $produktua)
 					{ 

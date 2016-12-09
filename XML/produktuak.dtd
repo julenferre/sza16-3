@@ -1,10 +1,10 @@
 <!ELEMENT produktuak (produktua)*>
 	<!ATTLIST produktuak azkenid IDREF #REQUIRED>
-<!ELEMENT produktua (izena, jabea, deskribapena, salneurria, irudia)>
+<!ELEMENT produktua (izena, jabea, deskribapena, salneurria, argazkia)>
 	<!ATTLIST produktua id ID #REQUIRED>
 	<!ELEMENT izena (#PCDATA)>
 	<!ELEMENT jabea (#PCDATA)>
 	<!ELEMENT deskribapena (#PCDATA)>
 	<!ELEMENT salneurria (#PCDATA)>
-	<!ELEMENT irudia (#PCDATA)>
+	<!ELEMENT argazkia (#PCDATA)>
 	

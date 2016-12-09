@@ -4,8 +4,8 @@
 		<title>MAIN</title>
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 		<script>
-			function produktuBerriaIgo(erab){
-				window.location.href = "../HTML/produktuaIgo.html?user=" + encodeURIComponent(erab);
+			function produktuBerriaIgo(){
+				window.location.href = "../HTML/produktuaIgo.html";
 			}
 			var timer;		
 			timer = setInterval(produktuakIkusi, 5000);
@@ -16,7 +16,7 @@
 						document.getElementById("produktuak").innerHTML = xhttp.responseText;
 					}
 				};
-				xhttp.open("GET","../PHP/produktuakIkusi.php", true);
+				xhttp.open("GET","../PHP/produktuakIkusi.php?ikusi=erab", true);
 				xhttp.send();
 			}
 		</script>
@@ -28,7 +28,7 @@
 			<h2>SalErosi</h2>
 		</div>
 		<div id='estekak'>
-			<span><a href='../HTML/index.html'>Home</a></span>
+			<span><a href='../HTML/index.html'>Home</a></span><br/>
 			<span><a href='../PHP/produktuak.php'>Produktuak</a></span>
 		</div>
 		<div id="edukia">
@@ -46,14 +46,16 @@
 					}
 				}
 				
-				echo ("<br><input type='button' value='Produktua igo' onclick='produktuBerriaIgo(".$_GET[user].")'");
+				echo ("<br><input type='button' value='Produktua igo' onclick='produktuBerriaIgo()'");
 				echo ("<br>");
 			?>
 			<br>
 			<div id="produktuak">
 				<?PHP 
-					session_start();
-					$_SESSION['prod'] = "erab";
+					if (session_status() == PHP_SESSION_NONE) {
+						session_start();
+					}
+					$_GET['ikusi'] = "batzuk";
 					include ("../PHP/produktuakIkusi.php");
 				?>
 			</div>
