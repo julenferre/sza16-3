@@ -6,6 +6,19 @@
 		<link rel='stylesheet' type='text/css' href='../CSS/style.css' />
 		<script type="text/javascript" src="../JS/balioztatu.js"></script>
 		<script type="text/javascript">
+		function loginKonprobatu(){
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if ((xhttp.readyState==4)&&(xhttp.status==200 )){
+					if(xhttp.responseText == "logingabe"){
+						window.location = "../HTML/index.html";
+					}
+				}
+			};
+			xhttp.open("GET","../PHP/loginKonprobatu.php", true);
+			xhttp.send();
+		}
+		loginKonprobatu();
 		function irudiAurrekarga(irudia){
 			document.getElementById('argazkiAurrekarga').style.display = 'inline';
 			document.getElementById('argazkiAurrekarga').src = window.URL.createObjectURL(irudia);

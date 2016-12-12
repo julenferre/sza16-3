@@ -1,4 +1,10 @@
 <?php
+	session_start();
+	if (!isset($_SESSION['user'])) {
+		header("Location: ../HTML/index.html");
+		die();
+	}
+
 	//DDBBra konektatu		
 	include "connect.php";
 	

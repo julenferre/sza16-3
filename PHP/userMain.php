@@ -1,3 +1,10 @@
+<?PHP
+	session_start();
+	if (!isset($_SESSION['user'])) {
+		header("Location: ../HTML/index.html");
+		die();
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>

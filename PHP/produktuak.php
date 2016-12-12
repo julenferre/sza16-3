@@ -40,7 +40,7 @@
 		</div>
 		<div id='estekak'>
 			<span><a href='../HTML/index.html'>Home</a></span><br/>
-			<span><a href='../PHP/produktuakIkusi.php'>Produktuak</a></span>
+			<span><a href='../PHP/produktuak.php'>Produktuak</a></span>
 		</div>
 		<div id="edukia">	
 			<div id="produktuak">

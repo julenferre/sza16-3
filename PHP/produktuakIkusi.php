@@ -24,7 +24,7 @@
 						$erantzuna = $conn->query($query);
 						echo "<td><img src='data:image/jpeg;base64,".base64_encode( $erantzuna->fetch_assoc()['image'] )."' width='100px' /></td>";
 						if(isset($_GET['erosi'])){
-							echo("<td><a onclick='produktuaErosi(\"".$produktua['id']."\",\"".$_SESSION['user']."\")' style='text-decoration:underline;color:blue;'>Erosi</a></td>");
+							echo("<td><button onclick='produktuaErosi(\"".$produktua['id']."\",\"".$_SESSION['user']."\")'>Erosi</a></td>");
 						}
 						echo ("</tr>");
 					}
