@@ -13,14 +13,14 @@
 		
 		$jabeak = $fitx->getElementById($produktuID)->getElementsByTagName("jabea");
 		
-		if(strcmp(jabea->nodeValue,$_GET['user'])==0){
-			echo "Produktu hau zurea da jada; ezin duzu erosi";
-		}
-		else{
-			foreach($jabeak as $jabea){
-				$jabea->nodeValue=$_GET['user'];				
+		foreach($jabeak as $jabea){			
+			if(strcmp($jabea->nodeValue,$_SESSION['user'])===0){
+				echo "Produktu hau zurea da jada; ezin duzu erosi";
 			}
-			echo "Produktua ondo erosi duzu";
+			else{			
+				$jabea->nodeValue=$_SESSION['user'];
+				echo "Produktua ondo erosi duzu";
+			}
 		}
 		
 		$fitx->save('../XML/produktuak.xml');

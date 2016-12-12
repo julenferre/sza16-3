@@ -27,7 +27,7 @@
 						produktuakIkusi();
 					}
 				};
-				xhttp.open("GET","../PHP/produktuaErosi.php?prodId="+prodId+"&user="+erab, true);
+				xhttp.open("GET","../PHP/produktuaErosi.php?prodId="+prodId, true);
 				xhttp.send();				
 			}
 		</script>
