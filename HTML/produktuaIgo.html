@@ -39,7 +39,7 @@
 				<form id="formularioa" method="POST" onsubmit="return salneurriCheck()" action="../PHP/produktuaIgo.php" enctype="multipart/form-data">
 				<p>Produktua * : <input type="text" id="izena" name="izena" placeholder="Produktua" required /></p>
 				<p>Deskribapena: <textarea id="deskribapena" name="deskribapena" style="resize: none; width: 320px; height: 40px"></textarea><br /></p>
-				<p>Salneurria *: <input type="text" id="salneurria" name="salneurria" onblur="salnuerriCheck()" />&euro;</p>
+				<p>Salneurria *: <input type="text" id="salneurria" name="salneurria" onblur="salnuerriCheck()" required />&euro;</p>
 				<p>Argazkia :<input type="file" id="argazkia" name="argazkia" onchange="irudiAurrekarga(this.files[0])">
 				<img src="" id="argazkiAurrekarga" alt="Argazkia" style="display: none; height: 150px; width:auto" /><br/></p>
 				<input type="submit" value="OK" />
