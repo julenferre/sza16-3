@@ -30,8 +30,8 @@
 	</head>
 	<body>
 		<div id='burua'>
-			<span class='esteka'><a href="signUp.html">Sign Up</a></span><br/>
-			<span class='esteka'><a href="logIn.html">Log In</a></span>
+			<span class='esteka'><a href="../HTML/signUp.html">Sign Up</a></span><br/>
+			<span class='esteka'><a href="../HTML/logIn.html">Log In</a></span>
 			<h2>SalErosi</h2>
 		</div>
 		<div id='estekak'>
